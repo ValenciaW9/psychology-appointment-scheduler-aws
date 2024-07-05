@@ -1,0 +1,7 @@
+resolver: lts-18.17  # Or another LTS version that includes your packages
+extra-deps:
+  - amazonka-1.6.1
+  - amazonka-core-1.6.1
+  - amazonka-dynamodb-1.6.1
+  - amazonka-sns-1.6.1
+  - aws-lambda-haskell-runtime-3.1.0

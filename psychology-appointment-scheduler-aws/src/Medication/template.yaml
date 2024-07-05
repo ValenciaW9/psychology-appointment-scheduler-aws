@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  CreateAppointmentFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: Main.handler
+      Runtime: provided.al2
+      CodeUri: .
+      MemorySize: 128
+      Timeout: 10
+      Policies: AmazonDynamoDBFullAccess
+  AssignMedicationFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: Medication.handler
+      Runtime: provided.al2
+      CodeUri: .
+      MemorySize: 128
+      Timeout: 10
+      Policies: AmazonDynamoDBFullAccess
+  SendNotificationFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: Notification.handler
+      Runtime: provided.al2
+      CodeUri: .
+      MemorySize: 128
+      Timeout: 10
+      Policies: AmazonSNSFullAccess
